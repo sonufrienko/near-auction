@@ -1,0 +1,17 @@
+{
+  "name": "contracts",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "asp": "asp --verbose --nologo",
+    "build": "asb --target debug",
+    "build:release": "asb"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "near-sdk-as": "^3.2.3"
+  }
+}
