@@ -1,5 +1,5 @@
 import { context, u128 } from 'near-sdk-as';
-import { Money, Timestamp, AccountId } from '../../utils';
+import { Money, Timestamp, AccountId } from './utils';
 
 @nearBindgen
 export class Auction {
