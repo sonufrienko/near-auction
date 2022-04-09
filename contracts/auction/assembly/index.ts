@@ -10,7 +10,7 @@ import {
   logging,
 } from 'near-sdk-as';
 import { Auction, Bid, Lot } from './models';
-import { XCC_GAS, assert_self, assert_single_promise_success } from './utils';
+import { XCC_GAS, assert_self, assert_single_promise_success } from '../utils';
 
 /**
  * TO DO
