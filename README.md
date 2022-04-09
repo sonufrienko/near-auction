@@ -29,13 +29,12 @@ export CONTRACT=dev-1649362691109-47700064404108
 
 ## Access Smart Contract
 
-near view $CONTRACT listAuctions
-near call $CONTRACT startAuction '{"lotName": "Villa #001", "lotImageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750"}' --accountId sergiio.testnet
-near view $CONTRACT getAuction '{"auctionId": 1}'
-near call $CONTRACT cancelAuction '{"auctionId": 0}' --accountId sergiio.testnet
-near call $CONTRACT endAuction '{"auctionId": 0}' --accountId sergiio.testnet
-
-near call $CONTRACT placeBid '{"auctionId": 1}' --accountId u2.sergiio.testnet --deposit 0.011
+near view $CONTRACT list_auctions
+near call $CONTRACT create_auction '{"lotName": "Villa #001", "lotImageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750"}' --accountId sergiio.testnet
+near view $CONTRACT get_auction '{"auctionId": 1}'
+near call $CONTRACT cancel_auction '{"auctionId": 0}' --accountId sergiio.testnet
+near call $CONTRACT end_auction '{"auctionId": 1}' --accountId sergiio.testnet --gas=300000000000000
+near call $CONTRACT place_bid '{"auctionId": 1}' --accountId u2.sergiio.testnet --deposit 0.011
 
 ## Account Details
 
