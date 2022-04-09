@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:unit": "asp -f unit.spec",
     "asp": "asp --verbose --nologo",
     "build": "asb --target debug",
     "build:release": "asb"
