@@ -2,6 +2,8 @@
 
 ![](images/near-logo.png)
 
+https://www.loom.com/share/5df1cb4021794eea8ed1ebab21eca84b
+
 This project allows the creation of transparent auctions on the blockchain where any bids can be verified. Users can sell goods to the highest bidder.
 
 ## How to use
