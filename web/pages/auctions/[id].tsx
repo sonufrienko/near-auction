@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import type { NextPage } from 'next';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { getAuction } from '../../near';
 import AuctionDetails from '../../components/AuctionDetails';
 
@@ -24,7 +27,15 @@ const AuctionPage: NextPage = ({ near }: any) => {
     }
   }, [near]);
 
-  return <div>{auction && <AuctionDetails auction={auction} index={auctionId} />}</div>;
+  return (
+    <div>
+      <Breadcrumbs aria-label="breadcrumb" style={{ marginTop: 20 }}>
+        <Link href={`/`}>All auctions</Link>
+        <Typography color="text.primary">Details</Typography>
+      </Breadcrumbs>
+      {auction && <AuctionDetails auction={auction} index={auctionId} />}
+    </div>
+  );
 };
 
 export default AuctionPage;

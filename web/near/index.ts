@@ -35,7 +35,17 @@ export const getUser = async (wallet: nearAPI.WalletConnection) => {
   return null;
 };
 
-export async function init() {
+export interface NearProps {
+  contract: nearAPI.Contract;
+  currentUser: {
+    accountId: any;
+    balance: string;
+  } | null;
+  config: nearAPI.ConnectConfig;
+  wallet: nearAPI.WalletConnection;
+}
+
+export async function init(): Promise<NearProps> {
   const wallet = await getWallet();
   const currentUser = await getUser(wallet);
 
@@ -63,9 +73,9 @@ export const getAuction = async (auctionId: number) => {
   return contract?.get_auction({ auctionId });
 };
 
-export const placeBid = async (auctionId: number) => {
+export const placeBid = async (auctionId: number, nearAmount: string) => {
   const gas = 30_000_000_000_000;
-  const depositInYoctoNEAR = nearAPI.utils.format.parseNearAmount('0.01');
+  const depositInYoctoNEAR = nearAPI.utils.format.parseNearAmount(nearAmount);
   // @ts-ignore
   return contract?.place_bid({ auctionId }, gas, depositInYoctoNEAR);
 };
